@@ -1,0 +1,1 @@
+create schema sd_usr_mngmnt;
