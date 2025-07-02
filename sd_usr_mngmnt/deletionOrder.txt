@@ -1,0 +1,5 @@
+users_roles
+roles_privileges
+users
+privileges
+roles
