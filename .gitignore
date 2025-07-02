@@ -33,7 +33,6 @@ build/
 .vscode/
 /.mvn/wrapper/maven-wrapper.properties
 /.mvn/
-/src/main/resources/static/
 /mvnw.cmd
 /mvnw
 /.gitattributes
