@@ -1,0 +1,12 @@
+create table sd_usr_mngmnt.privileges (enabled boolean default true not null, id varchar(255) not null, privilege_name varchar(255) not null, primary key (id));
+create table sd_usr_mngmnt.roles (enabled boolean default true not null, id varchar(255) not null, role_name varchar(255) not null, primary key (id));
+create table sd_usr_mngmnt.users (account_expired boolean default false not null, account_locked boolean default false not null, credentials_expired boolean default false not null, user_enabled boolean default true not null, created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, updated_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null, created_by varchar(255) not null, email varchar(255) not null unique, first_name varchar(255) not null, id varchar(255) not null, last_name varchar(255) not null, password varchar(255) not null, updated_by varchar(255) not null, primary key (id));
+create index idx_privileges_id on sd_usr_mngmnt.privileges (id);
+create index idx_roles_id on sd_usr_mngmnt.roles (id);
+create index idx_users_id on sd_usr_mngmnt.users (id);
+create table sd_usr_mngmnt.roles_privileges (privilege_id varchar(255) not null, role_id varchar(255) not null);
+create table sd_usr_mngmnt.users_roles (role_id varchar(255) not null, user_id varchar(255) not null);
+alter table if exists sd_usr_mngmnt.roles_privileges add constraint fk_role_privileges_privilege_id foreign key (privilege_id) references sd_usr_mngmnt.privileges;
+alter table if exists sd_usr_mngmnt.roles_privileges add constraint fk_role_privileges_role_id foreign key (role_id) references sd_usr_mngmnt.roles;
+alter table if exists sd_usr_mngmnt.users_roles add constraint fk_users_roles_role_id foreign key (role_id) references sd_usr_mngmnt.roles;
+alter table if exists sd_usr_mngmnt.users_roles add constraint fk_users_roles_user_id foreign key (user_id) references sd_usr_mngmnt.users;
