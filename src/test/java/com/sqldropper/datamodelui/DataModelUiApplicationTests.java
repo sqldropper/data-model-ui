@@ -102,7 +102,7 @@ class DataModelUiApplicationTests {
 
 	private void moveToProperDirectory() throws IOException {
 		Path sourceUri = new File(path+"/output").toPath();
-		Path targetUri = new File("static-pages").toPath();
+		Path targetUri = new File(path+"/static").toPath();
 		Path outputZipFile = new File(path+"output.tar.gz").toPath();
 		Files.deleteIfExists(outputZipFile);
 		Files.move(sourceUri, targetUri, REPLACE_EXISTING);
