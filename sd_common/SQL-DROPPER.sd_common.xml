@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><database name="SQL-DROPPER" schema="sd_common" type="PostgreSQL - 17.7">
+   <tables>
+      <table name="audit_log" remarks="" schema="sd_common" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="audit_id" nullable="false" remarks="" size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="1" name="created_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="created_by" nullable="true" remarks="" size="25" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="3" name="updated_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="updated_by" nullable="true" remarks="" size="25" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="action" nullable="true" remarks="" size="1" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="6" name="audit_timestamp" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="changes" nullable="true" remarks="" size="2000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="message" nullable="true" remarks="" size="2000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="table_keys" nullable="true" remarks="" size="2000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="table_name" nullable="true" remarks="" size="25" type="varchar" typeCode="12"/>
+         <primaryKey column="audit_id" sequenceNumberInPK="1"/>
+         <index name="audit_log_pkey" unique="true">
+            <column ascending="true" name="audit_id"/>
+         </index>
+         <index name="idx_audit_log_tablename_action" unique="false">
+            <column ascending="true" name="table_name"/>
+            <column ascending="true" name="action"/>
+         </index>
+         <index name="idx_audit_log_tablename_table_keys" unique="false">
+            <column ascending="true" name="table_name"/>
+            <column ascending="true" name="table_keys"/>
+         </index>
+      </table>
+   </tables>
+</database>

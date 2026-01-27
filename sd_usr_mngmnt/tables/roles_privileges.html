@@ -109,9 +109,9 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="privilege_id">privilege_id</span></td>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="privilege_id">privilege_id</span></td>
                                     <td>varchar</td>
-                                    <td>255</td>
+                                    <td>25</td>
                                     <td title=''></td>
                                     <td title=''></td>
                                     <td>null</td>
@@ -122,8 +122,8 @@
                                     <td>
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                             <tr>
-                                                <td title="roles_privileges.privilege_id references privileges.id via fk_role_privileges_privilege_id"><a href='privileges.html'>privileges</a><span class='relatedKey'>.id</span></td>
-                                                <td class="constraint detail">fk_role_privileges_privilege_id</td>
+                                                <td title="roles_privileges.privilege_id references privileges.privilege_id via fk5duhoc7rwt8h06avv41o41cfy"><a href='privileges.html'>privileges</a><span class='relatedKey'>.privilege_id</span></td>
+                                                <td class="constraint detail">fk5duhoc7rwt8h06avv41o41cfy</td>
                                                 <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
                                             </tr>
                                         </table>
@@ -131,9 +131,9 @@
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="role_id">role_id</span></td>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="role_id">role_id</span></td>
                                     <td>varchar</td>
-                                    <td>255</td>
+                                    <td>25</td>
                                     <td title=''></td>
                                     <td title=''></td>
                                     <td>null</td>
@@ -144,10 +144,78 @@
                                     <td>
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                             <tr>
-                                                <td title="roles_privileges.role_id references roles.id via fk_role_privileges_role_id"><a href='roles.html'>roles</a><span class='relatedKey'>.id</span></td>
-                                                <td class="constraint detail">fk_role_privileges_role_id</td>
+                                                <td title="roles_privileges.role_id references roles.role_id via fk629oqwrudgp5u7tewl07ayugj"><a href='roles.html'>roles</a><span class='relatedKey'>.role_id</span></td>
+                                                <td class="constraint detail">fk629oqwrudgp5u7tewl07ayugj</td>
                                                 <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
                                             </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="created_at">created_at</span></td>
+                                    <td>timestamp</td>
+                                    <td>29,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="created_by">created_by</span></td>
+                                    <td>varchar</td>
+                                    <td>25</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="updated_at">updated_at</span></td>
+                                    <td>timestamp</td>
+                                    <td>29,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="updated_by">updated_by</span></td>
+                                    <td>varchar</td>
+                                    <td>25</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
                                     <td></td>
@@ -155,6 +223,48 @@
                                 </tbody>
                             </table>
                         </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> roles_privileges_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
+                                    <td>privilege_id + role_id</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>idx_roles_privileges</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
+                                    <td>role_id + privilege_id</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
                     </div>
                     <div class="box box-primary">
                         <div class="box-header with-border">
@@ -175,18 +285,18 @@
                                 <div class="tab-content no-padding">
                                     <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="roles_privileges.html" target="_top" title="roles_privileges" alt="" coords="219,56,489,184">
+<area shape="rect" id="node1" href="roles_privileges.html" target="_top" title="roles_privileges" alt="" coords="219,56,517,301">
 <area shape="rect" id="node2" href="privileges.html" target="_top" title="privileges" alt="" coords="5,5,175,123">
-<area shape="rect" id="node3" href="roles.html" target="_top" title="roles" alt="" coords="24,140,156,257">
+<area shape="rect" id="node3" href="roles.html" target="_top" title="roles" alt="" coords="19,140,161,257">
 </map>
                                         <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/roles_privileges.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
                                     </div>
                                     <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="roles_privileges.html" target="_top" title="roles_privileges" alt="" coords="219,5,489,133">
+<area shape="rect" id="node1" href="roles_privileges.html" target="_top" title="roles_privileges" alt="" coords="219,5,517,251">
 <area shape="rect" id="node2" href="privileges.html" target="_top" title="privileges" alt="" coords="5,8,175,125">
-<area shape="rect" id="node3" href="roles.html" target="_top" title="roles" alt="" coords="24,145,156,263">
-<area shape="rect" id="node4" href="users_roles.html" target="_top" title="users_roles" alt="" coords="270,151,438,239">
+<area shape="rect" id="node3" href="roles.html" target="_top" title="roles" alt="" coords="19,204,161,321">
+<area shape="rect" id="node4" href="user_roles.html" target="_top" title="user_roles" alt="" coords="288,268,448,356">
 </map>
                                         <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/roles_privileges.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
                                     </div>
