@@ -1,10 +1,5 @@
 user_roles
 roles_privileges
-users_hist
-user_roles_hist
-roles_privileges_hist
-roles_hist
-privileges_hist
 users
 privileges
 roles

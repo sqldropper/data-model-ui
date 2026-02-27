@@ -1,0 +1,6 @@
+revinfo
+privileges_hist
+roles_hist
+roles_privileges_hist
+user_roles_hist
+users_hist

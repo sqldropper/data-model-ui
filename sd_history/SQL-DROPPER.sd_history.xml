@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><database name="SQL-DROPPER" schema="sd_history" type="PostgreSQL - 17.9">
+   <tables>
+      <table name="privileges_hist" remarks="" schema="sd_history" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="privilege_id" nullable="false" remarks="" size="25" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="rev" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="rev" foreignKey="fkohjx1kbihptg4ipo32oui7cg9" implied="false" onDeleteCascade="false" schema="sd_history" table="revinfo"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="revtype" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="3" name="created_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="created_by" nullable="true" remarks="" size="25" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="5" name="updated_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="updated_by" nullable="true" remarks="" size="25" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="description" nullable="true" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="8" name="enabled" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="privilege_name" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
+         <primaryKey column="rev" sequenceNumberInPK="1"/>
+         <primaryKey column="privilege_id" sequenceNumberInPK="2"/>
+         <index name="privileges_hist_pkey" unique="true">
+            <column ascending="true" name="rev"/>
+            <column ascending="true" name="privilege_id"/>
+         </index>
+      </table>
+      <table name="revinfo" remarks="" schema="sd_history" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="rev" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="rev" foreignKey="fkohjx1kbihptg4ipo32oui7cg9" implied="false" onDeleteCascade="false" schema="sd_history" table="privileges_hist"/>
+            <child column="rev" foreignKey="fkpgxcl5j69j31cns4sxtwtnrsi" implied="false" onDeleteCascade="false" schema="sd_history" table="roles_hist"/>
+            <child column="rev" foreignKey="fk4qofj682unmtrlyiflbybr9qk" implied="false" onDeleteCascade="false" schema="sd_history" table="roles_privileges_hist"/>
+            <child column="rev" foreignKey="fkphf1ltn2u5c9cnuvxgremt4fn" implied="false" onDeleteCascade="false" schema="sd_history" table="user_roles_hist"/>
+            <child column="rev" foreignKey="fkjytmnxymhnh8wdmc1gsmjmj38" implied="false" onDeleteCascade="false" schema="sd_history" table="users_hist"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="revtstmp" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
+         <primaryKey column="rev" sequenceNumberInPK="1"/>
+         <index name="revinfo_pkey" unique="true">
+            <column ascending="true" name="rev"/>
+         </index>
+      </table>
+      <table name="roles_hist" remarks="" schema="sd_history" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="role_id" nullable="false" remarks="" size="25" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="rev" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="rev" foreignKey="fkpgxcl5j69j31cns4sxtwtnrsi" implied="false" onDeleteCascade="false" schema="sd_history" table="revinfo"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="revtype" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="3" name="created_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="created_by" nullable="true" remarks="" size="25" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="5" name="updated_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="updated_by" nullable="true" remarks="" size="25" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="description" nullable="true" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="8" name="enabled" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="role_name" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
+         <primaryKey column="rev" sequenceNumberInPK="1"/>
+         <primaryKey column="role_id" sequenceNumberInPK="2"/>
+         <index name="roles_hist_pkey" unique="true">
+            <column ascending="true" name="rev"/>
+            <column ascending="true" name="role_id"/>
+         </index>
+      </table>
+      <table name="roles_privileges_hist" remarks="" schema="sd_history" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="privilege_id" nullable="false" remarks="" size="25" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="role_id" nullable="false" remarks="" size="25" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="rev" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="rev" foreignKey="fk4qofj682unmtrlyiflbybr9qk" implied="false" onDeleteCascade="false" schema="sd_history" table="revinfo"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="revtype" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="4" name="created_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="created_by" nullable="true" remarks="" size="25" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="6" name="updated_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="updated_by" nullable="true" remarks="" size="25" type="varchar" typeCode="12"/>
+         <primaryKey column="rev" sequenceNumberInPK="1"/>
+         <primaryKey column="privilege_id" sequenceNumberInPK="2"/>
+         <primaryKey column="role_id" sequenceNumberInPK="3"/>
+         <index name="roles_privileges_hist_pkey" unique="true">
+            <column ascending="true" name="rev"/>
+            <column ascending="true" name="privilege_id"/>
+            <column ascending="true" name="role_id"/>
+         </index>
+      </table>
+      <table name="user_roles_hist" remarks="" schema="sd_history" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="role_id" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="user_id" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="rev" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="rev" foreignKey="fkphf1ltn2u5c9cnuvxgremt4fn" implied="false" onDeleteCascade="false" schema="sd_history" table="revinfo"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="revtype" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="4" name="created_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="created_by" nullable="true" remarks="" size="25" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="6" name="updated_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="updated_by" nullable="true" remarks="" size="25" type="varchar" typeCode="12"/>
+         <primaryKey column="rev" sequenceNumberInPK="1"/>
+         <primaryKey column="role_id" sequenceNumberInPK="2"/>
+         <primaryKey column="user_id" sequenceNumberInPK="3"/>
+         <index name="user_roles_hist_pkey" unique="true">
+            <column ascending="true" name="rev"/>
+            <column ascending="true" name="role_id"/>
+            <column ascending="true" name="user_id"/>
+         </index>
+      </table>
+      <table name="users_hist" remarks="" schema="sd_history" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="user_id" nullable="false" remarks="" size="25" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="rev" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="rev" foreignKey="fkjytmnxymhnh8wdmc1gsmjmj38" implied="false" onDeleteCascade="false" schema="sd_history" table="revinfo"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="revtype" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="3" name="created_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="created_by" nullable="true" remarks="" size="25" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="5" name="updated_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="updated_by" nullable="true" remarks="" size="25" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="7" name="account_expired" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="8" name="account_locked" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="9" name="credentials_expired" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="email" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="first_name" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="last_name" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="password" nullable="true" remarks="" size="2000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="14" name="user_enabled" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <primaryKey column="rev" sequenceNumberInPK="1"/>
+         <primaryKey column="user_id" sequenceNumberInPK="2"/>
+         <index name="users_hist_pkey" unique="true">
+            <column ascending="true" name="rev"/>
+            <column ascending="true" name="user_id"/>
+         </index>
+      </table>
+   </tables>
+</database>
