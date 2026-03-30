@@ -1,0 +1,3 @@
+oauth2_registered_client
+oauth2_authorization
+oauth2_authorization_consent

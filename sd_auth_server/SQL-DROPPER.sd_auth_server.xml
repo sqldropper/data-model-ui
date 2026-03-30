@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><database name="SQL-DROPPER" schema="sd_auth_server" type="PostgreSQL - 17.9">
+   <tables>
+      <table name="oauth2_authorization" remarks="" schema="sd_auth_server" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="100" type="varchar" typeCode="12">
+            <parent column="id" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="sd_auth_server" table="oauth2_registered_client"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="registered_client_id" nullable="false" remarks="" size="100" type="varchar" typeCode="12">
+            <parent column="id" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="sd_auth_server" table="oauth2_registered_client"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="principal_name" nullable="false" remarks="" size="200" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="authorization_grant_type" nullable="false" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="NULL::character varying" digits="0" id="4" name="authorized_scopes" nullable="true" remarks="" size="1000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="NULL::character varying" digits="0" id="5" name="attributes" nullable="true" remarks="" size="4000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="NULL::character varying" digits="0" id="6" name="state" nullable="true" remarks="" size="500" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="NULL::character varying" digits="0" id="7" name="authorization_code_value" nullable="true" remarks="" size="4000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="8" name="authorization_code_issued_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="9" name="authorization_code_expires_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="NULL::character varying" digits="0" id="10" name="authorization_code_metadata" nullable="true" remarks="" size="2000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="NULL::character varying" digits="0" id="11" name="access_token_value" nullable="true" remarks="" size="4000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="12" name="access_token_issued_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="13" name="access_token_expires_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="NULL::character varying" digits="0" id="14" name="access_token_metadata" nullable="true" remarks="" size="2000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="NULL::character varying" digits="0" id="15" name="access_token_type" nullable="true" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="NULL::character varying" digits="0" id="16" name="access_token_scopes" nullable="true" remarks="" size="1000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="NULL::character varying" digits="0" id="17" name="oidc_id_token_value" nullable="true" remarks="" size="4000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="18" name="oidc_id_token_issued_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="19" name="oidc_id_token_expires_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="NULL::character varying" digits="0" id="20" name="oidc_id_token_metadata" nullable="true" remarks="" size="2000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="NULL::character varying" digits="0" id="21" name="refresh_token_value" nullable="true" remarks="" size="4000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="22" name="refresh_token_issued_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="23" name="refresh_token_expires_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="NULL::character varying" digits="0" id="24" name="refresh_token_metadata" nullable="true" remarks="" size="2000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="NULL::character varying" digits="0" id="25" name="user_code_value" nullable="true" remarks="" size="4000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="26" name="user_code_issued_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="27" name="user_code_expires_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="NULL::character varying" digits="0" id="28" name="user_code_metadata" nullable="true" remarks="" size="2000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="NULL::character varying" digits="0" id="29" name="device_code_value" nullable="true" remarks="" size="4000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="30" name="device_code_issued_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="31" name="device_code_expires_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="NULL::character varying" digits="0" id="32" name="device_code_metadata" nullable="true" remarks="" size="2000" type="varchar" typeCode="12"/>
+      </table>
+      <table name="oauth2_authorization_consent" remarks="" schema="sd_auth_server" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="registered_client_id" nullable="false" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="principal_name" nullable="false" remarks="" size="200" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="authorities" nullable="true" remarks="" size="1000" type="varchar" typeCode="12"/>
+         <primaryKey column="registered_client_id" sequenceNumberInPK="1"/>
+         <primaryKey column="principal_name" sequenceNumberInPK="2"/>
+         <index name="oauth2_authorization_consent_pkey" unique="true">
+            <column ascending="true" name="registered_client_id"/>
+            <column ascending="true" name="principal_name"/>
+         </index>
+      </table>
+      <table name="oauth2_registered_client" remarks="" schema="sd_auth_server" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="100" type="varchar" typeCode="12">
+            <child column="id" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="sd_auth_server" table="oauth2_authorization"/>
+            <child column="registered_client_id" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="sd_auth_server" table="oauth2_authorization"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="client_id" nullable="false" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="2" name="client_id_issued_at" nullable="false" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="client_secret" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="4" name="client_secret_expires_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="client_name" nullable="false" remarks="" size="200" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="client_authentication_methods" nullable="false" remarks="" size="1000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="authorization_grant_types" nullable="false" remarks="" size="1000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="redirect_uris" nullable="true" remarks="" size="2000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="postlogoutredirecturis" nullable="true" remarks="" size="2000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="scopes" nullable="true" remarks="" size="2000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="client_settings" nullable="false" remarks="" size="4000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="token_settings" nullable="false" remarks="" size="4000" type="varchar" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="oauth2_registered_client_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="oauth2_registered_client_client_id_key" unique="true">
+            <column ascending="true" name="client_id"/>
+         </index>
+      </table>
+   </tables>
+</database>
